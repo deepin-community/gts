@@ -1,0 +1,17 @@
+Origin: uos
+Reviewed-By: zhangfeilong
+Last-Update: 2022-04-08
+
+--- gts-0.7.6+darcs121130.orig/src/rounding.h
++++ gts-0.7.6+darcs121130/src/rounding.h
+@@ -37,6 +37,10 @@
+ #    define FPU_ROUND_DOUBLE
+ #    define FPU_RESTORE
+ #   endif /* __alpha__ && __GLIBC__ */
++#   ifdef __sw_64__
++#    define FPU_ROUND_DOUBLE
++#    define FPU_RESTORE
++#   endif
+ #  else /* not FPU_EXTENDED */
+ #    define FPU_ROUND_DOUBLE
+ #    define FPU_RESTORE
